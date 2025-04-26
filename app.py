@@ -64,8 +64,20 @@ if url:
 if st.session_state.transcript and not st.session_state.vector_store:
     with st.spinner("Preparing Indexing..."):
         try:
+            transcript = st.session_state.transcript
+            chunk_size = 0
+            chunk_overlap = 0
+            if len(transcript) <= 2000:
+                chunk_size = 300
+                chunk_overlap = 50
+            elif len(transcript) <= 5000:
+                chunk_size = 600
+                chunk_overlap = 100
+            else:
+                chunk_size = 1000
+                chunk_overlap = 200
             text_splitter = RecursiveCharacterTextSplitter(
-                chunk_size=1500, chunk_overlap=200
+                chunk_size=chunk_size, chunk_overlap=chunk_overlap
             )
             docs = text_splitter.split_documents(transcript)
 
