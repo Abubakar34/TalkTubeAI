@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg
+*.egg-info/
+dist/
+build/
+.env
+.venv
+venv/
+env/
+*.env
+
+# Jupyter Notebooks checkpoints
+.ipynb_checkpoints/
+
+# VSCode
+.vscode/
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
+# LangChain cache or intermediate storage
+.cache/
+*.jsonl
+
+# HuggingFace
+huggingface_hub/
+
+# Models
+models/
+*.pth
+*.pt
+*.bin
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+
+# RAG-specific
+retriever_cache/
+llm_outputs/
+docs_uploaded/
